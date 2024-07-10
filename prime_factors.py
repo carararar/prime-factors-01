@@ -1,12 +1,15 @@
 class PrimeFactors:
+    def __init__(self):
+        self.__divisor = 2
+        self.__factors = []
+
     def of(self, number) -> []:
-        factors = []
-        if number == 1:
-            return factors
-        divisor = 2
-        while number > 1:
-            while number % divisor == 0:
-                factors.append(divisor)
-                number //= divisor
-            divisor += 1
-        return factors
+        if number < 2:
+            return self.__factors
+
+        if number % self.__divisor == 0:
+            self.__factors.append(self.__divisor)
+            number //= self.__divisor
+        else:
+            self.__divisor += 1
+        return self.of(number)

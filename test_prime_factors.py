@@ -34,3 +34,6 @@ class TestPrimeFactors(TestCase):
 
     def test_prime_factors_when_14(self):
         self.assertEqual([2, 7], self.sut.of(14))
+
+    def test_prime_factors_when_15(self):
+        self.assertEqual([3, 5], self.sut.of(15))
